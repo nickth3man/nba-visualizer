@@ -1,2 +1,13 @@
 # All raw data files
 raw/
+
+# Generated/processed data
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Node
+node_modules/

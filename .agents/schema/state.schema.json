@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.nba-visualizer/.agents/schema/state.schema.json",
+  "title": "Agent Task State",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "description",
+    "current_phase",
+    "auto_commit",
+    "phases",
+    "approval_history"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "current_phase": {
+      "type": "string",
+      "enum": [
+        "1-research",
+        "2-plan",
+        "3-implement",
+        "4-review"
+      ]
+    },
+    "auto_commit": {
+      "type": "boolean"
+    },
+    "phases": {
+      "type": "object",
+      "required": [
+        "1-research",
+        "2-plan",
+        "3-implement",
+        "4-review"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "1-research": {
+          "$ref": "#/$defs/phase"
+        },
+        "2-plan": {
+          "$ref": "#/$defs/phase"
+        },
+        "3-implement": {
+          "$ref": "#/$defs/phase"
+        },
+        "4-review": {
+          "$ref": "#/$defs/phase"
+        }
+      }
+    },
+    "approval_history": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/approval"
+      }
+    }
+  },
+  "$defs": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "phase": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "in_progress",
+            "ready_for_approval",
+            "completed",
+            "blocked",
+            "skipped"
+          ]
+        },
+        "started_at": {
+          "$ref": "#/$defs/date"
+        },
+        "ready_at": {
+          "$ref": "#/$defs/date"
+        },
+        "completed_at": {
+          "$ref": "#/$defs/date"
+        },
+        "approved_at": {
+          "$ref": "#/$defs/date"
+        },
+        "approved_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "output_file": {
+          "type": "string",
+          "pattern": "^\\.agents/tasks/[a-z0-9][a-z0-9-]*/(1-research/findings\\.md|2-plan/plan\\.md|3-implement/tasks\\.md|4-review/review\\.md)$"
+        },
+        "blocked_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "skip_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "in_progress"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "started_at"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "ready_for_approval"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "started_at",
+              "ready_at",
+              "output_file"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "completed"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "started_at",
+              "ready_at",
+              "completed_at",
+              "approved_at",
+              "approved_by",
+              "output_file"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "blocked"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "started_at",
+              "blocked_reason"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "skipped"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "completed_at",
+              "approved_at",
+              "approved_by",
+              "skip_reason"
+            ]
+          }
+        }
+      ]
+    },
+    "approval": {
+      "type": "object",
+      "required": [
+        "phase",
+        "approved_at",
+        "approved_by",
+        "action"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "phase": {
+          "type": "string",
+          "enum": [
+            "1-research",
+            "2-plan",
+            "3-implement",
+            "4-review"
+          ]
+        },
+        "approved_at": {
+          "$ref": "#/$defs/date"
+        },
+        "approved_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "advance",
+            "skip",
+            "complete"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

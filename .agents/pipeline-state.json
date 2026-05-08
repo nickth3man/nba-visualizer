@@ -1,0 +1,17 @@
+{
+  "active_task": "initial-architecture",
+  "tasks": {
+    "initial-architecture": {
+      "description": "Initial NBA data inventory, GitHub research, and architecture recommendations for the NBA visualizer platform",
+      "created_at": "2026-05-08"
+    },
+    "pipeline-refinements": {
+      "description": "Apply drift-reducing refinements to the agent pipeline instructions, schemas, templates, and validators",
+      "created_at": "2026-05-08"
+    },
+    "raw-manifest-completeness": {
+      "description": "Ensure every file under /raw is explicitly accounted for by the manifest and raw manifest verifier",
+      "created_at": "2026-05-08"
+    }
+  }
+}

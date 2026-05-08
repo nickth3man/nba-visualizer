@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "task_id": "pipeline-refinements",
+  "description": "Apply drift-reducing refinements to the agent pipeline instructions, schemas, templates, and validators",
+  "current_phase": "4-review",
+  "auto_commit": false,
+  "phases": {
+    "1-research": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/pipeline-refinements/1-research/findings.md"
+    },
+    "2-plan": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/pipeline-refinements/2-plan/plan.md"
+    },
+    "3-implement": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/pipeline-refinements/3-implement/tasks.md"
+    },
+    "4-review": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/pipeline-refinements/4-review/review.md"
+    }
+  },
+  "approval_history": [
+    {
+      "phase": "1-research",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "advance",
+      "notes": "User requested applying all audit recommendations."
+    },
+    {
+      "phase": "2-plan",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "advance",
+      "notes": "User requested applying all audit recommendations."
+    },
+    {
+      "phase": "3-implement",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "advance",
+      "notes": "User requested applying all audit recommendations."
+    },
+    {
+      "phase": "4-review",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "complete",
+      "notes": "Pipeline refinement task completed."
+    }
+  ]
+}
