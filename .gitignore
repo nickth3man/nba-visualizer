@@ -1,0 +1,2 @@
+# nba_stats_pbp.sqlite is ~5.3 GB, which exceeds GitHub LFS's 5 GB per-file limit
+raw/sportsdata/sqlite/nba_stats_pbp.sqlite

@@ -1,0 +1,13 @@
+# Git LFS tracking for large data files
+
+# Play-by-play CSVs (50–82 MB each)
+raw/play_by_play/csv_by_season/*.csv filter=lfs diff=lfs merge=lfs -text
+
+# Play-by-play parquet (~889 MB)
+raw/play_by_play/parquet/*.parquet filter=lfs diff=lfs merge=lfs -text
+
+# SportsData CSVs (game_odds ~91 MB, player_boxscores ~730 MB, play_by_play ~3 GB, etc.)
+raw/sportsdata/csv/*.csv filter=lfs diff=lfs merge=lfs -text
+
+# SportsData SQLite — nba_stats.sqlite (~1.2 GB); nba_stats_pbp.sqlite is in .gitignore
+raw/sportsdata/sqlite/nba_stats.sqlite filter=lfs diff=lfs merge=lfs -text
