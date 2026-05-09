@@ -1,0 +1,138 @@
+File,Column,Data Type,Description
+cumulative_scraped/games_traditional.csv,GAME_ID,string,Unique identifier for each game (format: 00XXXXXXX)
+cumulative_scraped/games_traditional.csv,TEAM_ID,integer,Unique identifier for each team
+cumulative_scraped/games_traditional.csv,TEAM_ABBREVIATION,string,Three-letter team abbreviation (e.g. LAL, BOS, GSW)
+cumulative_scraped/games_traditional.csv,TEAM_NAME,string,Full team name (e.g. Los Angeles Lakers)
+cumulative_scraped/games_traditional.csv,GAME_DATE,date,Date the game was played (YYYY-MM-DD)
+cumulative_scraped/games_traditional.csv,MATCHUP,string,Game matchup notation (e.g. LAL vs. BOS or LAL @ BOS)
+cumulative_scraped/games_traditional.csv,WL,string,Win/Loss indicator (W or L)
+cumulative_scraped/games_traditional.csv,MIN,float,Minutes played by the team
+cumulative_scraped/games_traditional.csv,FGM,integer,Field goals made
+cumulative_scraped/games_traditional.csv,FGA,integer,Field goal attempts
+cumulative_scraped/games_traditional.csv,FG_PCT,float,Field goal percentage (0.0 to 1.0)
+cumulative_scraped/games_traditional.csv,FG3M,integer,Three-point field goals made
+cumulative_scraped/games_traditional.csv,FG3A,integer,Three-point field goal attempts
+cumulative_scraped/games_traditional.csv,FG3_PCT,float,Three-point field goal percentage (0.0 to 1.0)
+cumulative_scraped/games_traditional.csv,FTM,integer,Free throws made
+cumulative_scraped/games_traditional.csv,FTA,integer,Free throw attempts
+cumulative_scraped/games_traditional.csv,FT_PCT,float,Free throw percentage (0.0 to 1.0)
+cumulative_scraped/games_traditional.csv,OREB,integer,Offensive rebounds
+cumulative_scraped/games_traditional.csv,DREB,integer,Defensive rebounds
+cumulative_scraped/games_traditional.csv,REB,integer,Total rebounds (OREB + DREB)
+cumulative_scraped/games_traditional.csv,AST,integer,Assists
+cumulative_scraped/games_traditional.csv,STL,integer,Steals
+cumulative_scraped/games_traditional.csv,BLK,integer,Blocks
+cumulative_scraped/games_traditional.csv,TOV,integer,Turnovers
+cumulative_scraped/games_traditional.csv,PF,integer,Personal fouls
+cumulative_scraped/games_traditional.csv,PTS,integer,Points scored
+cumulative_scraped/games_traditional.csv,PLUS_MINUS,integer,Plus/minus differential for the game
+cumulative_scraped/games_advanced.csv,GAME_ID,string,Unique identifier for each game
+cumulative_scraped/games_advanced.csv,TEAM_ID,integer,Unique identifier for each team
+cumulative_scraped/games_advanced.csv,TEAM_ABBREVIATION,string,Three-letter team abbreviation
+cumulative_scraped/games_advanced.csv,TEAM_NAME,string,Full team name
+cumulative_scraped/games_advanced.csv,GAME_DATE,date,Date the game was played
+cumulative_scraped/games_advanced.csv,MATCHUP,string,Game matchup notation
+cumulative_scraped/games_advanced.csv,WL,string,Win/Loss indicator
+cumulative_scraped/games_advanced.csv,MIN,float,Minutes played
+cumulative_scraped/games_advanced.csv,E_OFF_RATING,float,Estimated offensive rating (points per 100 possessions)
+cumulative_scraped/games_advanced.csv,OFF_RATING,float,Offensive rating (points per 100 possessions)
+cumulative_scraped/games_advanced.csv,E_DEF_RATING,float,Estimated defensive rating (points allowed per 100 possessions)
+cumulative_scraped/games_advanced.csv,DEF_RATING,float,Defensive rating (points allowed per 100 possessions)
+cumulative_scraped/games_advanced.csv,E_NET_RATING,float,Estimated net rating (OFF_RATING - DEF_RATING)
+cumulative_scraped/games_advanced.csv,NET_RATING,float,Net rating (OFF_RATING - DEF_RATING)
+cumulative_scraped/games_advanced.csv,AST_PCT,float,Assist percentage (percentage of field goals assisted)
+cumulative_scraped/games_advanced.csv,AST_TO,float,Assist to turnover ratio
+cumulative_scraped/games_advanced.csv,AST_RATIO,float,Assist ratio (assists per 100 possessions)
+cumulative_scraped/games_advanced.csv,OREB_PCT,float,Offensive rebound percentage
+cumulative_scraped/games_advanced.csv,DREB_PCT,float,Defensive rebound percentage
+cumulative_scraped/games_advanced.csv,REB_PCT,float,Total rebound percentage
+cumulative_scraped/games_advanced.csv,E_TM_TOV_PCT,float,Estimated team turnover percentage
+cumulative_scraped/games_advanced.csv,TM_TOV_PCT,float,Team turnover percentage (turnovers per 100 possessions)
+cumulative_scraped/games_advanced.csv,EFG_PCT,float,Effective field goal percentage (adjusts for 3PT being worth more)
+cumulative_scraped/games_advanced.csv,TS_PCT,float,True shooting percentage (adjusts for FT and 3PT)
+cumulative_scraped/games_advanced.csv,USG_PCT,float,Usage percentage (estimate of plays used)
+cumulative_scraped/games_advanced.csv,E_USG_PCT,float,Estimated usage percentage
+cumulative_scraped/games_advanced.csv,E_PACE,float,Estimated pace (possessions per 48 minutes)
+cumulative_scraped/games_advanced.csv,PACE,float,Pace (possessions per 48 minutes)
+cumulative_scraped/games_advanced.csv,PACE_PER40,float,Pace adjusted to per 40 minutes
+cumulative_scraped/games_advanced.csv,POSS,integer,Number of possessions
+cumulative_scraped/games_advanced.csv,PIE,float,Player Impact Estimate (overall rating 0.0 to 1.0)
+cumulative_scraped/games_four-factors.csv,GAME_ID,string,Unique identifier for each game
+cumulative_scraped/games_four-factors.csv,TEAM_ID,integer,Unique identifier for each team
+cumulative_scraped/games_four-factors.csv,TEAM_ABBREVIATION,string,Three-letter team abbreviation
+cumulative_scraped/games_four-factors.csv,TEAM_NAME,string,Full team name
+cumulative_scraped/games_four-factors.csv,GAME_DATE,date,Date the game was played
+cumulative_scraped/games_four-factors.csv,MATCHUP,string,Game matchup notation
+cumulative_scraped/games_four-factors.csv,WL,string,Win/Loss indicator
+cumulative_scraped/games_four-factors.csv,MIN,float,Minutes played
+cumulative_scraped/games_four-factors.csv,EFG_PCT,float,Effective field goal percentage (shooting efficiency)
+cumulative_scraped/games_four-factors.csv,FTA_RATE,float,Free throw attempt rate (FTA per FGA)
+cumulative_scraped/games_four-factors.csv,TM_TOV_PCT,float,Team turnover percentage (ball security)
+cumulative_scraped/games_four-factors.csv,OREB_PCT,float,Offensive rebound percentage (second chance opportunities)
+cumulative_scraped/games_four-factors.csv,OPP_EFG_PCT,float,Opponent effective field goal percentage
+cumulative_scraped/games_four-factors.csv,OPP_FTA_RATE,float,Opponent free throw attempt rate
+cumulative_scraped/games_four-factors.csv,OPP_TM_TOV_PCT,float,Opponent team turnover percentage
+cumulative_scraped/games_four-factors.csv,OPP_OREB_PCT,float,Opponent offensive rebound percentage
+cumulative_scraped/games_misc.csv,GAME_ID,string,Unique identifier for each game
+cumulative_scraped/games_misc.csv,TEAM_ID,integer,Unique identifier for each team
+cumulative_scraped/games_misc.csv,TEAM_ABBREVIATION,string,Three-letter team abbreviation
+cumulative_scraped/games_misc.csv,TEAM_NAME,string,Full team name
+cumulative_scraped/games_misc.csv,GAME_DATE,date,Date the game was played
+cumulative_scraped/games_misc.csv,MATCHUP,string,Game matchup notation
+cumulative_scraped/games_misc.csv,WL,string,Win/Loss indicator
+cumulative_scraped/games_misc.csv,MIN,float,Minutes played
+cumulative_scraped/games_misc.csv,PTS_OFF_TOV,integer,Points scored off opponent turnovers
+cumulative_scraped/games_misc.csv,PTS_2ND_CHANCE,integer,Second chance points (from offensive rebounds)
+cumulative_scraped/games_misc.csv,PTS_FB,integer,Fast break points
+cumulative_scraped/games_misc.csv,PTS_PAINT,integer,Points scored in the paint
+cumulative_scraped/games_misc.csv,OPP_PTS_OFF_TOV,integer,Opponent points off turnovers
+cumulative_scraped/games_misc.csv,OPP_PTS_2ND_CHANCE,integer,Opponent second chance points
+cumulative_scraped/games_misc.csv,OPP_PTS_FB,integer,Opponent fast break points
+cumulative_scraped/games_misc.csv,OPP_PTS_PAINT,integer,Opponent points in the paint
+cumulative_scraped/games_misc.csv,BLK,integer,Blocks
+cumulative_scraped/games_misc.csv,BLKA,integer,Blocks against (times team was blocked)
+cumulative_scraped/games_misc.csv,PF,integer,Personal fouls
+cumulative_scraped/games_misc.csv,PFD,integer,Personal fouls drawn
+cumulative_scraped/games_scoring.csv,GAME_ID,string,Unique identifier for each game
+cumulative_scraped/games_scoring.csv,TEAM_ID,integer,Unique identifier for each team
+cumulative_scraped/games_scoring.csv,TEAM_ABBREVIATION,string,Three-letter team abbreviation
+cumulative_scraped/games_scoring.csv,TEAM_NAME,string,Full team name
+cumulative_scraped/games_scoring.csv,GAME_DATE,date,Date the game was played
+cumulative_scraped/games_scoring.csv,MATCHUP,string,Game matchup notation
+cumulative_scraped/games_scoring.csv,WL,string,Win/Loss indicator
+cumulative_scraped/games_scoring.csv,MIN,float,Minutes played
+cumulative_scraped/games_scoring.csv,PCT_FGA_2PT,float,Percentage of field goal attempts that were 2-pointers
+cumulative_scraped/games_scoring.csv,PCT_FGA_3PT,float,Percentage of field goal attempts that were 3-pointers
+cumulative_scraped/games_scoring.csv,PCT_PTS_2PT,float,Percentage of points from 2-point field goals
+cumulative_scraped/games_scoring.csv,PCT_PTS_2PT_MR,float,Percentage of points from mid-range 2-pointers
+cumulative_scraped/games_scoring.csv,PCT_PTS_3PT,float,Percentage of points from 3-point field goals
+cumulative_scraped/games_scoring.csv,PCT_PTS_FB,float,Percentage of points from fast breaks
+cumulative_scraped/games_scoring.csv,PCT_PTS_FT,float,Percentage of points from free throws
+cumulative_scraped/games_scoring.csv,PCT_PTS_OFF_TOV,float,Percentage of points from opponent turnovers
+cumulative_scraped/games_scoring.csv,PCT_PTS_PAINT,float,Percentage of points scored in the paint
+cumulative_scraped/games_scoring.csv,PCT_AST_2PM,float,Percentage of 2-point field goals that were assisted
+cumulative_scraped/games_scoring.csv,PCT_UAST_2PM,float,Percentage of 2-point field goals that were unassisted
+cumulative_scraped/games_scoring.csv,PCT_AST_3PM,float,Percentage of 3-point field goals that were assisted
+cumulative_scraped/games_scoring.csv,PCT_UAST_3PM,float,Percentage of 3-point field goals that were unassisted
+cumulative_scraped/games_scoring.csv,PCT_AST_FGM,float,Percentage of all field goals that were assisted
+cumulative_scraped/games_scoring.csv,PCT_UAST_FGM,float,Percentage of all field goals that were unassisted
+processed/games_boxscores.csv,GAME_ID,string,Unique identifier for each game
+processed/games_boxscores.csv,GAME_DATE,date,Date the game was played
+processed/games_boxscores.csv,HOME_TEAM_ID,integer,Home team's unique identifier
+processed/games_boxscores.csv,VISITOR_TEAM_ID,integer,Visiting team's unique identifier
+processed/games_boxscores.csv,HOME_TEAM_ABBREVIATION,string,Home team abbreviation
+processed/games_boxscores.csv,VISITOR_TEAM_ABBREVIATION,string,Visiting team abbreviation
+processed/games_boxscores.csv,HOME_WL,string,Home team win/loss (W or L)
+processed/games_boxscores.csv,VISITOR_WL,string,Visitor team win/loss (W or L)
+processed/games_boxscores.csv,HOME_PTS,integer,Home team points scored
+processed/games_boxscores.csv,VISITOR_PTS,integer,Visitor team points scored
+processed/games_boxscores.csv,HOME_*,various,All statistics for home team (prefixed with HOME_)
+processed/games_boxscores.csv,VISITOR_*,various,All statistics for visitor team (prefixed with VISITOR_)
+processed/teams_boxscores.csv,GAME_ID,string,Unique identifier for each game
+processed/teams_boxscores.csv,TEAM_ID,integer,Team's unique identifier
+processed/teams_boxscores.csv,TEAM_ABBREVIATION,string,Team abbreviation
+processed/teams_boxscores.csv,GAME_DATE,date,Date the game was played
+processed/teams_boxscores.csv,MATCHUP,string,Game matchup notation (includes @ or vs.)
+processed/teams_boxscores.csv,WL,string,Win/Loss indicator
+processed/teams_boxscores.csv,IS_HOME,boolean,Whether team played at home (True/False)
+processed/teams_boxscores.csv,*,various,All statistics from the 5 source files combined
