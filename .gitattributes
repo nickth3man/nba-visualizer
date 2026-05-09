@@ -1,1 +1,6 @@
 # Large data files are now in .gitignore
+raw/sportsdata/sqlite/nba_stats.sqlite filter=lfs diff=lfs merge=lfs -text
+raw/play_by_play/parquet/PlayByPlay.parquet filter=lfs diff=lfs merge=lfs -text
+raw/sportsdata/csv/player_boxscores.csv filter=lfs diff=lfs merge=lfs -text
+raw/sportsdata/csv/PlayerStatisticsExtended.csv filter=lfs diff=lfs merge=lfs -text
+raw/sportsdata/csv/PlayerStatistics.csv filter=lfs diff=lfs merge=lfs -text

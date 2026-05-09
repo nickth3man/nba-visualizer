@@ -1,8 +1,9 @@
-# All raw data files
-raw/
-
 # Generated/processed data
 data/
+
+# Raw data files too large for Git LFS (Pro limit: 2 GB)
+raw/sportsdata/sqlite/nba_stats_pbp.sqlite
+raw/sportsdata/csv/play_by_play.csv
 
 # Python
 __pycache__/
