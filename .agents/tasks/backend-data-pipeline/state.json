@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "task_id": "backend-data-pipeline",
+  "description": "Wire all raw data sources under /raw to a queryable FastAPI backend. ETL all 7 source directories (basketball_reference, cumulative_scraped, metadata, odds, play_by_play, processed, sportsdata) into a unified SQLite database under /data/. Build a FastAPI backend in /backend/ with typed endpoints for teams, players, games, shots, play-by-play, odds, and league trends. Expose the API endpoints consumed by the frontend hooks (useShotData, useGameData, useChartData).",
+  "current_phase": "1-research",
+  "auto_commit": false,
+  "phases": {
+    "1-research": {
+      "status": "in_progress",
+      "started_at": "2026-05-09"
+    },
+    "2-plan": {
+      "status": "pending"
+    },
+    "3-implement": {
+      "status": "pending"
+    },
+    "4-review": {
+      "status": "pending"
+    }
+  },
+  "approval_history": []
+}

@@ -19,6 +19,7 @@ if (-not $ManifestPath) {
 
 $rawRoot = Join-Path $Root "raw"
 $errors = New-Object "System.Collections.Generic.List[string]"
+$extraFiles = New-Object "System.Collections.Generic.List[object]"
 
 function Add-ValidationError {
   param([string]$Message)
@@ -184,9 +185,9 @@ if (-not (Test-Path -LiteralPath $rawRoot -PathType Container)) {
       }
     }
 
-    foreach ($path in $actualFiles.Keys) {
+    foreach ($path in ($actualFiles.Keys | Sort-Object)) {
       if (-not $inventory.ContainsKey($path)) {
-        Add-ValidationError "Actual raw file missing from manifest inventory: $path"
+        $extraFiles.Add($actualFiles[$path]) | Out-Null
       }
     }
 
@@ -244,4 +245,10 @@ if ($errors.Count -gt 0) {
   exit 1
 }
 
-Write-Host "Raw manifest verification passed. $($inventory.Count) files accounted for." -ForegroundColor Green
+Write-Host "Raw manifest verification passed. $($inventory.Count) baseline files present." -ForegroundColor Green
+if ($extraFiles.Count -gt 0) {
+  Write-Host "Additional raw files present (allowed): $($extraFiles.Count)" -ForegroundColor Yellow
+  foreach ($extraFile in $extraFiles) {
+    Write-Host " - $($extraFile.Path) ($($extraFile.Bytes) bytes)" -ForegroundColor Yellow
+  }
+}

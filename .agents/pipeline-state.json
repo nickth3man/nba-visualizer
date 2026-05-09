@@ -1,5 +1,5 @@
 {
-  "active_task": "initial-architecture",
+  "active_task": "backend-data-pipeline",
   "tasks": {
     "initial-architecture": {
       "description": "Initial NBA data inventory, GitHub research, and architecture recommendations for the NBA visualizer platform",
@@ -12,6 +12,26 @@
     "raw-manifest-completeness": {
       "description": "Ensure every file under /raw is explicitly accounted for by the manifest and raw manifest verifier",
       "created_at": "2026-05-08"
+    },
+    "raw-manifest-additive-files": {
+      "description": "Allow additive SQLite sidecar files under /raw while enforcing that manifest baseline files are not removed",
+      "created_at": "2026-05-08"
+    },
+    "orchestra-template": {
+      "description": "Create a reusable domain-agnostic Orchestra agent pipeline template for future projects",
+      "created_at": "2026-05-08"
+    },
+    "frontend-charting-research": {
+      "description": "Research React charting library options to resolve the deferred frontend charting strategy decision for the NBA visualizer platform",
+      "created_at": "2026-05-08"
+    },
+    "frontend-charting-followup": {
+      "description": "Implement all follow-up items from the frontend-charting-research review: replace hardcoded hex values in ShotChart.tsx with chartTheme tokens, add Vitest + Testing Library with component tests, implement route-level code splitting to resolve the chunk-size warning, evaluate uPlot for time-series views, validate shot coordinate conventions against real backend data, and document the accessibility compliance decision.",
+      "created_at": "2026-05-09"
+    },
+    "backend-data-pipeline": {
+      "description": "Wire all raw data sources under /raw to a queryable FastAPI backend. ETL all 7 source directories (basketball_reference, cumulative_scraped, metadata, odds, play_by_play, processed, sportsdata) into a unified SQLite database under /data/. Build a FastAPI backend in /backend/ with typed endpoints for teams, players, games, shots, play-by-play, odds, and league trends. Expose the API endpoints consumed by the frontend hooks (useShotData, useGameData, useChartData).",
+      "created_at": "2026-05-09"
     }
   }
 }

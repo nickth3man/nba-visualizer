@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "task_id": "orchestra-template",
+  "description": "Create a reusable domain-agnostic Orchestra agent pipeline template for future projects",
+  "current_phase": "4-review",
+  "auto_commit": false,
+  "phases": {
+    "1-research": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/orchestra-template/1-research/findings.md"
+    },
+    "2-plan": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/orchestra-template/2-plan/plan.md"
+    },
+    "3-implement": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/orchestra-template/3-implement/tasks.md"
+    },
+    "4-review": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/orchestra-template/4-review/review.md"
+    }
+  },
+  "approval_history": [
+    {
+      "phase": "1-research",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "advance",
+      "notes": "User requested a reusable Orchestra template."
+    },
+    {
+      "phase": "2-plan",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "advance",
+      "notes": "User requested implementation and clarified the template must work in any project."
+    },
+    {
+      "phase": "3-implement",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "advance",
+      "notes": "Created and corrected the Orchestra template."
+    },
+    {
+      "phase": "4-review",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "complete",
+      "notes": "Orchestra is domain-agnostic and no longer includes raw/local-input support."
+    }
+  ]
+}

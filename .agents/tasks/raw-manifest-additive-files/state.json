@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "task_id": "raw-manifest-additive-files",
+  "description": "Allow additive SQLite sidecar files under /raw while enforcing that manifest baseline files are not removed",
+  "current_phase": "4-review",
+  "auto_commit": false,
+  "phases": {
+    "1-research": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/raw-manifest-additive-files/1-research/findings.md"
+    },
+    "2-plan": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/raw-manifest-additive-files/2-plan/plan.md"
+    },
+    "3-implement": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/raw-manifest-additive-files/3-implement/tasks.md"
+    },
+    "4-review": {
+      "status": "completed",
+      "started_at": "2026-05-08",
+      "ready_at": "2026-05-08",
+      "completed_at": "2026-05-08",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "output_file": ".agents/tasks/raw-manifest-additive-files/4-review/review.md"
+    }
+  },
+  "approval_history": [
+    {
+      "phase": "1-research",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "advance",
+      "notes": "User clarified that raw validation must allow additive SQLite shim files and enforce that raw files are not removed."
+    },
+    {
+      "phase": "2-plan",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "advance",
+      "notes": "User clarified that raw validation must allow additive SQLite shim files and enforce that raw files are not removed."
+    },
+    {
+      "phase": "3-implement",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "advance",
+      "notes": "User clarified that raw validation must allow additive SQLite shim files and enforce that raw files are not removed."
+    },
+    {
+      "phase": "4-review",
+      "approved_at": "2026-05-08",
+      "approved_by": "user",
+      "action": "complete",
+      "notes": "Raw manifest verifier now treats the manifest inventory as a baseline and allows additive raw files."
+    }
+  ]
+}

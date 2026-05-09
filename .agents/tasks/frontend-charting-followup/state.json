@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "task_id": "frontend-charting-followup",
+  "description": "Implement all follow-up items from the frontend-charting-research review: replace hardcoded hex values in ShotChart.tsx with chartTheme tokens, add Vitest + Testing Library with component tests, implement route-level code splitting to resolve the chunk-size warning, evaluate uPlot for time-series views, validate shot coordinate conventions against real backend data, and document the accessibility compliance decision.",
+  "current_phase": "1-research",
+  "auto_commit": false,
+  "phases": {
+    "1-research": {
+      "status": "in_progress",
+      "started_at": "2026-05-09"
+    },
+    "2-plan": {
+      "status": "pending"
+    },
+    "3-implement": {
+      "status": "pending"
+    },
+    "4-review": {
+      "status": "pending"
+    }
+  },
+  "approval_history": []
+}

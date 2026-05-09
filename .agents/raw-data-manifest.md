@@ -2,7 +2,9 @@
 
 Last verified: 2026-05-08
 
-This file documents the expected local `/raw` inputs for agents. `/raw` is gitignored and must not be edited by agents. Use this manifest to detect missing or mismatched local data before research, planning, ETL, backend, or visualization work that depends on raw datasets.
+This file documents the required baseline local `/raw` inputs for agents. `/raw` is gitignored and must not be edited by agents. Use this manifest to detect removed or mismatched baseline data before research, planning, ETL, backend, or visualization work that depends on raw datasets.
+
+Runtime tools may add files under `/raw`, especially SQLite sidecars such as `*.sqlite-wal` and `*.sqlite-shm`. Additive files are allowed and should be reported by validation, not treated as failures. The hard rule is that nothing listed in this manifest should be removed from `/raw`.
 
 ## Expected Top-Level Sources
 
@@ -18,7 +20,7 @@ This file documents the expected local `/raw` inputs for agents. `/raw` is gitig
 
 ## Complete Raw File Inventory
 
-This table is the source of truth for every file expected under `/raw`. The verifier parses this table and fails if any recursive raw file is missing from the table, any listed file is missing from disk, any duplicate path is listed, or any byte count differs.
+This table is the required baseline inventory for `/raw`. The verifier parses this table and fails if any listed file is missing from disk, any duplicate path is listed, or any listed file byte count differs. Additional runtime files under `/raw` are allowed and reported separately.
 
 | Path | Bytes | Source |
 |---|---:|---|
@@ -139,14 +141,14 @@ powershell -ExecutionPolicy Bypass -File .agents/scripts/verify-raw-manifest.ps1
 
 The script verifies:
 
-- The complete raw file inventory table has exactly the files expected under `/raw`.
-- Every actual recursive raw file is listed in the manifest.
+- The complete raw file inventory table has the required baseline files expected under `/raw`.
 - Every listed manifest file exists on disk.
 - Every listed file byte count matches exactly.
 - The exact expected top-level source directory names.
-- Exact file counts for each expected source directory.
+- Exact baseline file counts for each expected source directory.
 - Critical file presence.
 - Total source bytes match the manifest source summaries.
+- Additional files under `/raw` are allowed and reported.
 
 For manual inspection, this command summarizes the same source directories:
 
@@ -175,13 +177,14 @@ sportsdata
 
 Validation rules:
 
-- Complete inventory paths and per-file byte counts are exact. A mismatch must be recorded in the current phase output before continuing.
-- Source file counts and byte totals must equal the complete inventory and local filesystem.
+- Complete inventory paths and per-file byte counts are exact for the required baseline. A missing baseline file or byte mismatch must be recorded in the current phase output before continuing.
+- Source file counts and byte totals must equal the complete inventory baseline.
+- Actual `/raw` may contain additional runtime files. Do not remove them, and do not treat them as validation failures unless a task explicitly depends on an exact no-extra-files snapshot.
 - Critical files listed above are mandatory for data-dependent work unless the task explicitly scopes around the missing source.
 
 ## Fresh-Agent Handling
 
 - If `/raw` is missing, do not make data architecture decisions from memory. Mark the data-dependent work blocked and ask the user to restore `/raw`.
-- If counts or critical files differ, record the mismatch in the current phase output before continuing.
+- If baseline counts, baseline byte counts, or critical files differ, record the mismatch in the current phase output before continuing.
 - If a dataset has changed since this manifest, update this manifest only after reading metadata and confirming the change with the user.
-- Do not add raw data, derived data, samples, or checksums of large raw files to git unless the user explicitly asks.
+- Do not add raw data, derived data, samples, SQLite sidecars, or checksums of large raw files to git unless the user explicitly asks.
