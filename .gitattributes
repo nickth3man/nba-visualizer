@@ -4,3 +4,6 @@ raw/play_by_play/parquet/PlayByPlay.parquet filter=lfs diff=lfs merge=lfs -text
 raw/sportsdata/csv/player_boxscores.csv filter=lfs diff=lfs merge=lfs -text
 raw/sportsdata/csv/PlayerStatisticsExtended.csv filter=lfs diff=lfs merge=lfs -text
 raw/sportsdata/csv/PlayerStatistics.csv filter=lfs diff=lfs merge=lfs -text
+raw/play_by_play/csv_by_season/*.csv filter=lfs diff=lfs merge=lfs -text
+raw/sportsdata/csv/game_odds.csv filter=lfs diff=lfs merge=lfs -text
+raw/sportsdata/csv/team_boxscores.csv filter=lfs diff=lfs merge=lfs -text
